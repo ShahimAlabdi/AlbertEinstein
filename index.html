@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Einstein - Complete Biography</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #efefef;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            border-left: 5px solid #444;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        /* POPUP STYLING */
+        #popup {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #popup-content {
+            background: #fffbe8;
+            padding: 25px;
+            width: 300px;
+            border-radius: 10px;
+            position: relative;
+            font-size: 20px;
+            direction: rtl;
+            text-align: right;
+            font-family: "Amiri", serif;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div id="popup">
+    <div id="popup-content">
+        <button id="close-btn">X</button>
+        <div id="duaaText">جاري التحميل...</div>
+    </div>
+</div>
+
+<header>
+    <h1>Albert Einstein</h1>
+    <p>The Complete Life Story of One of History's Greatest Minds</p>
+</header>
+
+<nav>
+    <a href="#life">Life Story</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#discoveries">Discoveries</a>
+    <a href="#awards">Awards</a>
+    <a href="#facts">Fun Facts</a>
+</nav>
+
+<div class="container">
+
+    <h2 id="life">Complete Life Story</h2>
+    <p>
+        Albert Einstein (1879–1955) was a German-born theoretical physicist who changed science forever.
+        His theories reshaped our understanding of space, time, and energy.
+    </p>
+
+    <h2 id="timeline">Timeline of Einstein's Life</h2>
+    <ul>
+        <li><strong>1879:</strong> Born in Ulm, Germany</li>
+        <li><strong>1905:</strong> Releases 4 revolutionary papers</li>
+        <li><strong>1915:</strong> Completes General Relativity</li>
+        <li><strong>1921:</strong> Wins Nobel Prize</li>
+        <li><strong>1933:</strong> Moves to the U.S.</li>
+        <li><strong>1955:</strong> Dies in Princeton</li>
+    </ul>
+
+    <h2 id="discoveries">Major Discoveries</h2>
+    <ul>
+        <li>Special Theory of Relativity</li>
+        <li>General Relativity</li>
+        <li>E = mc²</li>
+        <li>Photoelectric Effect</li>
+        <li>Bose–Einstein Condensate</li>
+    </ul>
+
+    <h2 id="awards">Awards</h2>
+    <ul>
+        <li>Nobel Prize in Physics</li>
+        <li>Copley Medal</li>
+        <li>Royal Astronomical Society Gold Medal</li>
+    </ul>
+
+    <h2 id="facts">Fun Facts</h2>
+    <ul>
+        <li>He rarely wore socks.</li>
+        <li>He loved the violin.</li>
+        <li>He was offered the presidency of Israel.</li>
+    </ul>
+</div>
+
+<script>
+    const duaas = [
+        "اللّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا.",
+        "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً.",
+        "اللّهُمَّ يَسِّرْ وَلَا تُعَسِّرْ، وَتَمِّمْ بِالْخَيْرِ.",
+        "رَبِّ زِدْنِي عِلْمًا.",
+        "حَسْبِيَ اللهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ."
+    ];
+
+    window.onload = function () {
+        const popup = document.getElementById("popup");
+        const duaaText = document.getElementById("duaaText");
+        const randomDuaa = duaas[Math.floor(Math.random() * duaas.length)];
+
+        duaaText.innerText = randomDuaa;
+        popup.style.display = "flex"; // Show popup
+    };
+
+    document.getElementById("close-btn").onclick = function () {
+        document.getElementById("popup").style.display = "none";
+    };
+</script>
+
+</body>
+</html>
